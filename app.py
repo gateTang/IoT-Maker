@@ -56,8 +56,8 @@ def digitalSignal():
         mqtt.publish('gate.tang@gmail.com/analogSignal', payload = analogSignal, qos=0, retain=False)
         print ("Analog State: " + analogSignal)
 
-        return render_template("home.html", displaySignal=displaySignal, analogValue=analogSignal)
-    return render_template("home.html", displaySignal=displaySignal, analogValue=analogSignal)
+        return render_template("home.html", displaySignal=displaySignal)
+    return render_template("home.html", displaySignal=displaySignal)
 @mqtt.on_connect()
 def handle_connect(client, userdata, flags, rc):
     mqtt.subscribe('gate.tang@gmail.com/input')
