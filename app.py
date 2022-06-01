@@ -54,7 +54,7 @@ def digitalSignal():
 
         analogSignal = request.form.get('analogSignal')
         mqtt.publish('gate.tang@gmail.com/analogSignal', payload = analogSignal, qos=0, retain=False)
-        print ("Analog State: " + analogSignal)
+        print (analogSignal)
 
         return render_template("home.html", displaySignal=displaySignal)
     return render_template("home.html", displaySignal=displaySignal)
