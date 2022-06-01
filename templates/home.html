@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+    .container{
+        position: relative;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        /*background: white;*/
+        text-align: center;
+        border-style: solid;
+        border-color: black;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease-in-out;
+        padding: 10px;
+    }
+            /*Toggle Switch*/
+    .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    }
+
+    .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+    }
+
+    .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+
+    .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+
+    input:checked + .slider {
+    background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+    border-radius: 34px;
+    }
+
+    .slider.round:before {
+    border-radius: 50%;
+    }
+
+    .analogSlidecontainer {
+    width: 100%;
+    height: 30%;
+    }
+
+.analogSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 30%;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.analogSlider:hover {
+  opacity: 1;
+}
+
+.analogSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.analogSlider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+    /* Analog Slider */
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form method = "POST">
+                <h3><b>Digital Signal {{ displaySignal }} </b></h3>
+                <label class="switch">
+                    <input type = "checkbox" name="signalState" id="signalState" style="margin-top: 10px;" value="1">
+                    <span class="slider round"></span>
+                </label>
+                <br><input type = "submit" style="margin-top: 10px; margin-bottom:10px; background-color: rgb(40, 205, 255); border-radius: 2px; border-color: black; cursor: pointer;">
+            </form>
+        </div>
+        <br>
+        <div class="container">
+            <form method="POST">
+                <h3><b>Analog Signal</b></h3>
+                <div class = "container">
+                    <div class="analogSlidecontainer">
+                        <input type="range" min="1" max="100" name="analogSignal" value="0" class="slider" id="analogSignal">
+                    </div>
+                </div>
+                <p>Value: <span id="demo"></span></p>
+                <input type = "submit" style="margin-top: 10px; margin-bottom:10px; background-color: rgb(40, 205, 255); border-radius: 2px; border-color: black; cursor: pointer;">
+                <script>
+                    var slider = document.getElementById("analogSignal");
+                    var output = document.getElementById("demo");
+                    output.innerHTML = slider.value;
+                    
+                    slider.oninput = function() {
+                      output.innerHTML = this.value;
+                    }
+                    </script>
+        </div>
+    </body>
+</html>
