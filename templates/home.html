@@ -119,25 +119,24 @@
     <body>
         <div class="container">
             <form method = "POST">
-                <h3><b>Digital Signal {{ displaySignal }} </b></h3>
+                <h3><b>Digital Signal</b></h3>
                 <label class="switch">
-                    <input type = "checkbox" name="signalState" id="signalState" style="margin-top: 10px;" value="1">
+                    <input type = "checkbox" name="signalState" id="signalState" style="margin-top: 10px;" value="1" >
                     <span class="slider round"></span>
                 </label>
-                <br><input type = "submit" style="margin-top: 10px; margin-bottom:10px; background-color: rgb(40, 205, 255); border-radius: 2px; border-color: black; cursor: pointer;">
-            </form>
+                <p>Submitted Value: {{ displaySignal }}</p>
+                <!--<br><input type = "submit" style="margin-top: 10px; margin-bottom:10px; background-color: rgb(40, 205, 255); border-radius: 2px; border-color: black; cursor: pointer;">-->
         </div>
         <br>
         <div class="container">
-            <form method="POST">
                 <h3><b>Analog Signal</b></h3>
                 <div class = "container">
                     <div class="analogSlidecontainer">
-                        <input type="range" min="1" max="100" name="analogSignal" value="1" class="slider" id="analogSignal">
+                        <input type="range" min="0" max="255" name="analogSignal" value="0" class="slider" id="analogSignal">
                     </div>
                 </div>
                 <p>Value: <span id="demo"></span></p>
-                <input type = "submit" style="margin-top: 10px; margin-bottom:10px; background-color: rgb(40, 205, 255); border-radius: 2px; border-color: black; cursor: pointer;">
+                <p>Submitted Value: {{ rangeSignal }}</p>
                 <script>
                     var slider = document.getElementById("analogSignal");
                     var output = document.getElementById("demo");
@@ -148,5 +147,9 @@
                     }
                     </script>
         </div>
+        <br><div class="container">
+            <input type = "submit" style="margin-top: 10px; margin-bottom:10px; background-color: rgb(40, 205, 255); border-radius: 2px; border-color: black; cursor: pointer;">
+        </div>
+    </form>
     </body>
 </html>
