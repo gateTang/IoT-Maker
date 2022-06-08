@@ -40,7 +40,7 @@ def respond():
     return json.dumps(a)
 
 @app.route("/", methods = ['POST', 'GET'])
-def digitalSignal():
+def home():
     global displaySignal
     if request.method == 'POST':
         digitalSignal = request.form.get('signalState')
