@@ -58,6 +58,7 @@ def digitalSignal():
 
         return render_template("home.html", displaySignal=displaySignal)
     return render_template("home.html", displaySignal=displaySignal)
+    
 @mqtt.on_connect()
 def handle_connect(client, userdata, flags, rc):
     mqtt.subscribe('gate.tang@gmail.com/input')
