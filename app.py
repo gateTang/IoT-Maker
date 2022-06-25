@@ -61,7 +61,7 @@ def home():
     
 @mqtt.on_connect()
 def handle_connect(client, userdata, flags, rc):
-    mqtt.subscribe('gate.tang@gmail.com/input')
+    mqtt.subscribe('gate.tang@gmail.com/sensorIn1')
        
 if __name__ == '__main__':
 # Threaded option to enable multiple instances for multiple user access support
