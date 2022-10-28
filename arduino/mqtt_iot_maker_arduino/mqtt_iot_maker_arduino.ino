@@ -1,14 +1,14 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
-#define WIFI_NAME "Tangchartsiri"
-#define WIFI_PASS "T75Vsr28"
+#define WIFI_NAME WIFI_NAME
+#define WIFI_PASS PASSWORD
 #define MQTT_SERVER "maqiatto.com"
 #define MQTT_PORT 1883
-#define MQTT_USERNAME "gate.tang@gmail.com"
-#define MQTT_PASSWORD "letmein" //Change to 
-#define MQTT_NAME "Gate"
-#define MQTT_TOPIC_DIGITAL "gate.tang@gmail.com/digitalSignal"
-#define MQTT_TOPIC_ANALOG "gate.tang@gmail.com/analogSignal"
+#define MQTT_USERNAME USERNAME
+#define MQTT_PASSWORD MQTT PASSWORD
+#define MQTT_NAME NAME
+#define MQTT_TOPIC_DIGITAL MQTT_TOPIC
+#define MQTT_TOPIC_ANALOG MQTT_TOPIC
 
 #define digitalPin D1
 #define analogPin 2 //DOUBLE CHECK IF THAT WORKS OR NOT.
